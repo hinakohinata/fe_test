@@ -1,4 +1,4 @@
-'use client'
+ 
 import PageContainer from '@/template/(DashboardLayout)/components/container/PageContainer';
 import Blog from '@/template/(DashboardLayout)/components/dashboard/Blog';
 import MonthlyEarnings from '@/template/(DashboardLayout)/components/dashboard/MonthlyEarnings';

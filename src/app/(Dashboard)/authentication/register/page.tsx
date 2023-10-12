@@ -1,4 +1,4 @@
-"use client";
+ ;
 import { Grid, Box, Card, Typography, Stack } from "@mui/material";
 import Link from "next/link";
 // import PageContainer from "@/app/(DashboardLayout)/components/container/PageContainer";

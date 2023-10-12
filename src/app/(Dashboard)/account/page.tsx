@@ -1,5 +1,5 @@
 
-"use client"
+ 
 import React, { useState } from 'react';
 import Link from 'next/link';
 import PageContainer from '@/template/(DashboardLayout)/components/container/PageContainer';

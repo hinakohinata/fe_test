@@ -1,4 +1,4 @@
-'use client';
+ ;
 import { Typography, Grid, CardContent, Box, Table, TableHead, TableRow, TableCell, Chip, TableBody, Switch, AppBar, Toolbar, IconButton, styled } from '@mui/material';
 
 // import { useAppDispatch, useAppSelector } from '@/redux-store/hook';

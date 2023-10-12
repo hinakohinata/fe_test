@@ -1,4 +1,4 @@
-"use client";
+ ;
 import { createExpenseAsync, getTypeNameAsync } from "@/redux/slices/expenseSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { Box, Button, FormLabel, Grid, TextField } from "@mui/material";

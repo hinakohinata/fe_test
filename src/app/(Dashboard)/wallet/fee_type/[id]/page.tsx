@@ -1,4 +1,4 @@
-"use client";
+ ;
 import { getExpense, getExpenseList, getExpenseListAsync, updateExpenseAsync } from "@/redux/slices/expenseSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import Link from "next/link";

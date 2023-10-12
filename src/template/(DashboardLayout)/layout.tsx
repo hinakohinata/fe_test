@@ -1,4 +1,4 @@
-"use client";
+ ;
 import { styled, Container, Box } from "@mui/material";
 import React, { useState } from "react";
 import Header from "./layout/header/Header";

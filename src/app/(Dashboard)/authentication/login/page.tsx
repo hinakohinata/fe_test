@@ -1,4 +1,4 @@
-"use client";
+ ;
 import Link from "next/link";
 import { Grid, Box, Card, Stack, Typography } from "@mui/material";
 // components

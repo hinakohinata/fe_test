@@ -1,4 +1,4 @@
-"use client"
+ 
 // import { deleteAuthorAsync, getAuthor, getAuthorById, updateAuthorAsync } from '@/redux-store/author-reducer/authorSlide';
 // import { useAppDispatch, useAppSelector } from '@/redux-store/hook';
 import Link from 'next/link'

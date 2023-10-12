@@ -1,4 +1,4 @@
-"use client";
+ ;
 import Header from "@/template/(DashboardLayout)/layout/header/Header";
 import Sidebar from "@/template/(DashboardLayout)/layout/sidebar/Sidebar";
 import { styled, Container, Box } from "@mui/material";

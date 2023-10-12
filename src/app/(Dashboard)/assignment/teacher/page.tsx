@@ -1,4 +1,4 @@
-'use client';
+ ;
 import { Typography, Grid,  Box, Table, TableHead, TableRow, TableCell, Chip, TableBody, Toolbar, styled, IconButton, Stack, Button, TextField, AppBar, Dialog, DialogTitle, DialogContent, MenuItem, DialogActions } from '@mui/material';
 
 import { useEffect, useState } from 'react'
