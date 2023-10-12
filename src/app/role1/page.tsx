@@ -19,11 +19,11 @@ const AccountStudent = () => {
     console.log("hello", assignments)
         
     }, []);
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+// const API_URL = process.env.NEXT_PUBLIC_API_URL;
     return (
 
             <Box sx={{ overflow: 'auto', width: { xs: '280px', sm: 'auto' } }}>
-{API_URL}
+{/* {API_URL} */}
                 <Grid container spacing={3}>
                     <Grid item xs={12}>
                         <Table

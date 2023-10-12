@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import styles from './page.module.css'
-import {useAuthorization} from "@/hocs/useAuthorization";
+// import {useAuthorization} from "@/hocs/useAuthorization";
 
 export default function Home() {
   

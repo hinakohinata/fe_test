@@ -5,7 +5,7 @@ import { RootState } from "../store";
 import dotenv from 'dotenv';
 
 // // dotenv.load();
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+// const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export interface accountState {
     originList: any[];
@@ -22,25 +22,25 @@ const initialState: accountState = {
 export const getaccListAsync = createAsyncThunk(
     'Acc/get-Acc-list',
     async () => {
-        const response = await axios.post<[]>(API_URL+'user/getAll');
+        const response = await axios.post<[]>('https://backend-for-my-git.onrender.com/user/getAll');
         return response.data
     }
 );
 export const getaccListByRoleAsync = createAsyncThunk(
     'Acc/get-Acc-list-by-Role',
     async (role: any) => {
-        const response = await axios.post<[]>(`${API_URL}user/getAllByRole/${role}`);
+        const response = await axios.post<[]>(`https://backend-for-my-git.onrender.com/user/getAllByRole/${role}`);
         return response.data
     }
 );
 
 export const getACCforAddAsm1to6ListAsync = createAsyncThunk('other/get-list', async () => {
-    const response = await axios.get<[]>(API_URL+'other/getforAddAsm1to6');
+    const response = await axios.get<[]>('https://backend-for-my-git.onrender.com/other/getforAddAsm1to6');
     return response.data
 });
 
 export const getACCforAddAsm7ListAsync = createAsyncThunk('other/get-list', async () => {
-    const response = await axios.get<[]>(API_URL+'other/getforAddAsm7');
+    const response = await axios.get<[]>('https://backend-for-my-git.onrender.com/other/getforAddAsm7');
     return response.data
 });
 
@@ -49,7 +49,7 @@ export const createAccAsync = createAsyncThunk(
     'acc/create-ACC',
     async (accData: any) => {
         console.log(accData)
-        const response = await axios.post<any>(API_URL+'user', accData);
+        const response = await axios.post<any>('https://backend-for-my-git.onrender.com/user', accData);
         console.log(response)
         return response.data;
     }
@@ -57,21 +57,21 @@ export const createAccAsync = createAsyncThunk(
 export const updateInfAccAsync = createAsyncThunk(
     'user/update1',
     async (updatedAcc: any) => {
-        const response = await axios.post<any>(`${API_URL}user/updateInfAccById/${updatedAcc.user_id}`, updatedAcc);
+        const response = await axios.post<any>(`https://backend-for-my-git.onrender.com/user/updateInfAccById/${updatedAcc.user_id}`, updatedAcc);
         return updatedAcc;
     }
 );
 export const disableAccAsync = createAsyncThunk(
     'user/disable',
     async (userID: any) => {
-        const response = await axios.put<any>(`${API_URL}user/disableAccById/${userID}`);
+        const response = await axios.put<any>(`https://backend-for-my-git.onrender.com/user/disableAccById/${userID}`);
         return userID;
     }
 );
 export const searchAccrAsync = createAsyncThunk(
     'user/search',
     async (text: string) => {
-        const response = await axios.post<[]>(`${API_URL}user/search/${text}`);
+        const response = await axios.post<[]>(`https://backend-for-my-git.onrender.com/user/search/${text}`);
         return response.data
     }
 )

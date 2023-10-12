@@ -3,10 +3,10 @@ import { RootState } from "../store";
 // import { toast } from 'react-toastify';
 import axios from "axios";
 // import bcrypt from 'bcryptjs';
-import dotenv from 'dotenv';
+// import dotenv from 'dotenv';
 
 // // dotenv.load();
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+// const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export interface userState {
   isLoggedIn: any,
@@ -26,7 +26,7 @@ export const login = createAsyncThunk('author/create', async (param: any) => {
   const username="admin"
   const password="123456"
   // Call API
-  const response = await axios.post<any>(API_URL+'user/login', { username, password });
+  const response = await axios.post<any>('https://backend-for-my-git.onrender.com/user/login', { username, password });
 
   return response.data;
 })

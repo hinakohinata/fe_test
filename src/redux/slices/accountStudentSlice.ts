@@ -5,7 +5,7 @@ import { RootState } from "../store";
 // import dotenv from 'dotenv';
 
 // // dotenv.load();
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+// const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export interface accountStudentState {
     originList: any[];
@@ -22,22 +22,22 @@ const initialState: accountStudentState = {
 export const getStudentListAsync = createAsyncThunk(
     'Acc/get-student-list',
     async () => {
-        const response = await axios.post<[]>(API_URL+'user/getAll');
+        const response = await axios.post<[]>('https://backend-for-my-git.onrender.com/user/getAll');
         return response.data
     }
 );
 export const getAllStudentListAsync = createAsyncThunk(
     'Acc/get-all-student-list',
     async () => {
-        const response = await axios.get<[]>(API_URL+'student/getListStudent');
-        // alert(API_URL+'student/getListStudent')
+        const response = await axios.get<[]>('https://backend-for-my-git.onrender.com/student/getListStudent');
+        // alert('https://backend-for-my-git.onrender.com/student/getListStudent')
         return response.data
     }
 );
 export const getStudentListByRoleAsync = createAsyncThunk(
     'Acc/get-student-list-by-Role',
     async (role: any) => {
-        const response = await axios.post<[]>(`${API_URL}getAllByRole/${role}`);
+        const response = await axios.post<[]>(`https://backend-for-my-git.onrender.com/getAllByRole/${role}`);
         return response.data
     }
 );
@@ -46,7 +46,7 @@ export const createAccAsync = createAsyncThunk(
     'acc/create',
     async (accData: any) => {
         console.log(accData)
-        const response = await axios.post<any>(API_URL+'user', accData);
+        const response = await axios.post<any>('https://backend-for-my-git.onrender.com/user', accData);
         console.log(response)
         return response.data.name;
     }
@@ -54,21 +54,21 @@ export const createAccAsync = createAsyncThunk(
 export const updateInfAccAsync = createAsyncThunk(
     'user/update1',
     async (updatedAcc: any) => {
-        const response = await axios.put<any>(`${API_URL}updateInfAccById/${updatedAcc.user_id}`, updatedAcc);
+        const response = await axios.put<any>(`https://backend-for-my-git.onrender.com/updateInfAccById/${updatedAcc.user_id}`, updatedAcc);
         return updatedAcc;
     }
 );
 export const disableAccAsync = createAsyncThunk(
     'user/disable',
     async (userID: any) => {
-        const response = await axios.put<any>(`${API_URL}disableAccById/${userID}`);
+        const response = await axios.put<any>(`https://backend-for-my-git.onrender.com/disableAccById/${userID}`);
         return userID;
     }
 );
 export const searchAccrAsync = createAsyncThunk(
     'user/search',
     async (text: string) => {
-        const response = await axios.post<[]>(`${API_URL}search/${text}`);
+        const response = await axios.post<[]>(`https://backend-for-my-git.onrender.com/search/${text}`);
         return response.data
     }
 )
