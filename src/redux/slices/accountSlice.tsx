@@ -1,9 +1,12 @@
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { RootState } from "../store";
+import dotenv from 'dotenv';
 
+// // dotenv.load();
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
 export interface accountState {
     originList: any[];
     accList: any[];
@@ -133,10 +136,10 @@ export const AccSlice = createSlice({
                 state.originList = action.payload;
             })
             .addCase(createAccAsync.fulfilled, (state, action) => {
-                toast.success("Đã thêm " + action.payload, {
-                    position: "top-right",
-                    autoClose: 5000,
-                });
+                // toast.success("Đã thêm " + action.payload, {
+                //     position: "top-right",
+                //     autoClose: 5000,
+                // });
             })
             .addCase(searchAccrAsync.fulfilled, (state, action) => {
                 state.accList = action.payload;
@@ -147,18 +150,18 @@ export const AccSlice = createSlice({
             .addCase(updateInfAccAsync.fulfilled, (state, action) => {
                 const index = state.accList.findIndex(item => item.id === action.payload.userId);
                 state.accList[index] = action.payload;
-                toast.success("Đã cập nhật " + action.payload.name + ' - ' + action.payload.name, {
-                    position: "top-right",
-                    autoClose: 5000,
-                });
+                // toast.success("Đã cập nhật " + action.payload.name + ' - ' + action.payload.name, {
+                //     position: "top-right",
+                //     autoClose: 5000,
+                // });
             })
             .addCase(disableAccAsync.fulfilled, (state, action) => {
                 const index = state.accList.findIndex(item => item.id === action.payload.userId);
                 state.accList[index] = action.payload;
-                toast.success("Đã cập nhật", {
-                    position: "top-right",
-                    autoClose: 5000,
-                });
+                // toast.success("Đã cập nhật", {
+                //     position: "top-right",
+                //     autoClose: 5000,
+                // });
             })
             .addMatcher(
                 (action) => [

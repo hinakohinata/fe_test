@@ -1,13 +1,13 @@
- 
+"use client"
 import axios from "axios";
 import React, { useState } from 'react';
 import { useRouter } from "next/navigation"
 import { useAppDispatch } from '@/redux/hook';
 import { login, logout, setUser } from "@/redux/slices/userSlice";
-import {pushRouter} from './(Dashboard)/authen/pushRouter';
+// import {pushRouter} from './(Dashboard)/authen/pushRouter';
 
 export default function Home() {
-  pushRouter();
+  // pushRouter();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
@@ -52,8 +52,8 @@ export default function Home() {
                     <button className="btn btn-info btn-lg btn-block" onClick={handleLogin} >Login</button>
                   </div>
 
-                  <p className="small mb-5 pb-lg-2"><a className="text-muted" href="/forgot_password">Forgot password?</a></p>
-                  {/* <p>Don't have an account? <a href="#!" className="link-info">Register here</a></p> */}
+                  <p className="small mb-5 pb-lg-2"><a className="text-muted" href="#!">Forgot password?</a></p>
+                  <p>Don't have an account? <a href="#!" className="link-info">Register here</a></p>
 
                 </form>
 

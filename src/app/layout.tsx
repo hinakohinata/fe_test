@@ -1,16 +1,11 @@
- 
+'use client'
 import './globals.css'
 import type { Metadata } from 'next'
-import { ThemeProvider } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
-import { baselightTheme } from '@/utils/theme/DefaultColors';
 // import { baselightTheme } from "src/utils/theme/DefaultColors";
 
 import { Inter } from 'next/font/google'
 import { store } from "../redux/store";
 import { Provider } from 'react-redux'
-import { ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -42,13 +37,9 @@ export default function RootLayout({
       ></script>*/}
     </head>
       <body className="container">
-        <ThemeProvider theme={baselightTheme}>
           <Provider store={store}>
-            <CssBaseline />
-            <ToastContainer />
             {children}
           </Provider>
-        </ThemeProvider>
       </body>
     </html>
   )

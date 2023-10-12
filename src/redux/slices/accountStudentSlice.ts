@@ -1,9 +1,12 @@
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { RootState } from "../store";
+// import dotenv from 'dotenv';
 
+// // dotenv.load();
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
 export interface accountStudentState {
     originList: any[];
     accList: any[];
@@ -27,13 +30,14 @@ export const getAllStudentListAsync = createAsyncThunk(
     'Acc/get-all-student-list',
     async () => {
         const response = await axios.get<[]>(API_URL+'student/getListStudent');
+        // alert(API_URL+'student/getListStudent')
         return response.data
     }
 );
 export const getStudentListByRoleAsync = createAsyncThunk(
     'Acc/get-student-list-by-Role',
     async (role: any) => {
-        const response = await axios.post<[]>(`${API_URL}user/getAllByRole/${role}`);
+        const response = await axios.post<[]>(`${API_URL}getAllByRole/${role}`);
         return response.data
     }
 );
@@ -50,21 +54,21 @@ export const createAccAsync = createAsyncThunk(
 export const updateInfAccAsync = createAsyncThunk(
     'user/update1',
     async (updatedAcc: any) => {
-        const response = await axios.put<any>(`${API_URL}user/updateInfAccById/${updatedAcc.user_id}`, updatedAcc);
+        const response = await axios.put<any>(`${API_URL}updateInfAccById/${updatedAcc.user_id}`, updatedAcc);
         return updatedAcc;
     }
 );
 export const disableAccAsync = createAsyncThunk(
     'user/disable',
     async (userID: any) => {
-        const response = await axios.put<any>(`${API_URL}user/disableAccById/${userID}`);
+        const response = await axios.put<any>(`${API_URL}disableAccById/${userID}`);
         return userID;
     }
 );
 export const searchAccrAsync = createAsyncThunk(
     'user/search',
     async (text: string) => {
-        const response = await axios.post<[]>(`${API_URL}user/search/${text}`);
+        const response = await axios.post<[]>(`${API_URL}search/${text}`);
         return response.data
     }
 )
@@ -141,18 +145,18 @@ export const AccSlice = createSlice({
             .addCase(updateInfAccAsync.fulfilled, (state, action) => {
                 const index = state.accList.findIndex(item => item.id === action.payload.userId);
                 state.accList[index] = action.payload;
-                toast.success("Đã cập nhật" + action.payload.name + ' - ' + action.payload.name, {
-                    position: "top-right",
-                    autoClose: 5000,
-                });
+                // toast.success("Đã cập nhật" + action.payload.name + ' - ' + action.payload.name, {
+                //     position: "top-right",
+                //     autoClose: 5000,
+                // });
             })
             .addCase(disableAccAsync.fulfilled, (state, action) => {
                 const index = state.accList.findIndex(item => item.id === action.payload.userId);
                 state.accList[index] = action.payload;
-                toast.success("Đã cập nhật", {
-                    position: "top-right",
-                    autoClose: 5000,
-                });
+                // toast.success("Đã cập nhật", {
+                //     position: "top-right",
+                //     autoClose: 5000,
+                // });
             })
     },
 })
